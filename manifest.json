@@ -1,0 +1,40 @@
+{
+  "name": "Patient Image Analysis",
+  "description": "Fetch and analyze patient images with Tesseract.js, displaying results in the popup.",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "https://njkidneydoctors.emnemr.com/*"
+  ],
+  "background": {
+  
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://njkidneydoctors.emnemr.com/ci/chart/doc/index/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "libs/tesseract.esm.js",
+        "libs/tesseract-core.wasm"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

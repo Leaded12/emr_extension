@@ -1,0 +1,39 @@
+<!-- popup.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Patient Image Analysis</title>
+    <script src="popup.js" defer></script>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 10px;
+        width: 300px;
+      }
+      #results {
+        margin-top: 10px;
+        white-space: pre-wrap;
+      }
+      .error {
+        color: red;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      th, td {
+        border: 1px solid #ddd;
+        padding: 4px;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Patient Analysis</h2>
+    <button id="analyzeBtn">Run Analysis</button>
+    <div id="results"></div>
+  </body>
+</html>
